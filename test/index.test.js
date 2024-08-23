@@ -1,12 +1,12 @@
 const axios = require('axios');
 
 // Base URL for ReqRes API
-const apiUrl = 'https://reqres.in/api';
+const baseUrl = 'https://reqres.in/api';
 
 // Function to get all users
 async function getUsers() {
   try {
-    const response = await axios.get(`${apiUrl}/users`);
+    const response = await axios.get(`${baseUrl}/users`);
     console.log('Users:', response.data);
   } catch (error) {
     console.error('Error getting users:', error);
@@ -16,7 +16,7 @@ async function getUsers() {
 // Function to create a user
 async function createUser(userData) {
   try {
-    const response = await axios.post(`${apiUrl}/users`, userData);
+    const response = await axios.post(`${baseUrl}/users`, userData);
     console.log('User created:', response.data);
   } catch (error) {
     console.error('Error creating user:', error);
@@ -26,7 +26,7 @@ async function createUser(userData) {
 // Function to update a user
 async function updateUser(userId, updateData) {
   try {
-    const response = await axios.put(`${apiUrl}/users/${userId}`, updateData);
+    const response = await axios.put(`${baseUrl}/users/${userId}`, updateData);
     console.log('User updated:', response.data);
   } catch (error) {
     console.error('Error updating user:', error);
@@ -36,7 +36,7 @@ async function updateUser(userId, updateData) {
 // Function to delete a user
 async function deleteUser(userId) {
   try {
-    const response = await axios.delete(`${apiUrl}/users/${userId}`);
+    const response = await axios.delete(`${baseUrl}/users/${userId}`);
     console.log('User deleted:', response.status);
   } catch (error) {
     console.error('Error deleting user:', error);
